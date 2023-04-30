@@ -6,10 +6,10 @@ import static utilz.Constants.Dialogue.*;
 
 import gamestates.Playing;
 
-public class Crabby extends Enemy {
+public class Pig extends Enemy {
 
-	public Crabby(float x, float y) {
-		super(x, y, CRABBY_WIDTH, CRABBY_HEIGHT, CRABBY);
+	public Pig(float x, float y) {
+		super(x, y, PIG_WIDTH, PIG_HEIGHT, PIG);
 		initHitbox(22, 19);
 		initAttackBox(82, 19, 30);
 	}

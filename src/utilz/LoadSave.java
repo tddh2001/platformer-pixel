@@ -23,7 +23,7 @@ public class LoadSave {
 	public static final String PLAYING_BG_IMG = "playing_bg_img.png";
 	public static final String BIG_CLOUDS = "big_clouds.png";
 	public static final String SMALL_CLOUDS = "small_clouds.png";
-	public static final String CRABBY_SPRITE = "pig_sprite.png";
+	public static final String PIG_SPRITE = "pig_sprite.png";
 	public static final String STATUS_BAR = "health_power_bar.png";
 	public static final String COMPLETED_IMG = "completed_sprite.png";
 	public static final String POTION_ATLAS = "potions_sprites.png";
@@ -33,7 +33,7 @@ public class LoadSave {
 	public static final String CANNON_BALL = "ball.png";
 	public static final String DEATH_SCREEN = "death_screen.png";
 	public static final String OPTIONS_MENU = "options_background.png";
-	public static final String PINKSTAR_ATLAS = "kingpig.png";
+	public static final String KINGPIG_ATLAS = "kingpig.png";
 	public static final String QUESTION_ATLAS = "question_atlas.png";
 	public static final String EXCLAMATION_ATLAS = "exclamation_atlas.png";
 	public static final String SHARK_ATLAS = "shark_atlas.png";

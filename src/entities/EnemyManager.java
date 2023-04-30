@@ -26,13 +26,13 @@ public class EnemyManager {
 
 	public void update(int[][] lvlData) {
 		boolean isAnyActive = false;
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive()) {
 				c.update(lvlData, playing);
 				isAnyActive = true;
 			}
 
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (KingPig p : currentLevel.getPinkstars())
 			if (p.isActive()) {
 				p.update(lvlData, playing);
 				isAnyActive = true;
@@ -65,20 +65,20 @@ public class EnemyManager {
 	}
 
 	private void drawPinkstars(Graphics g, int xLvlOffset) {
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (KingPig p : currentLevel.getPinkstars())
 			if (p.isActive()) {
-				g.drawImage(pinkstarArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - PINKSTAR_DRAWOFFSET_X + p.flipX(),
-						(int) p.getHitbox().y - PINKSTAR_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), PINKSTAR_WIDTH * p.flipW(), PINKSTAR_HEIGHT, null);
+				g.drawImage(pinkstarArr[p.getState()][p.getAniIndex()], (int) p.getHitbox().x - xLvlOffset - KINGPIG_DRAWOFFSET_X + p.flipX(),
+						(int) p.getHitbox().y - KINGPIG_DRAWOFFSET_Y + (int) p.getPushDrawOffset(), KINGPIG_WIDTH * p.flipW(), KINGPIG_HEIGHT, null);
 //				p.drawHitbox(g, xLvlOffset);
 			}
 	}
 
 	private void drawCrabs(Graphics g, int xLvlOffset) {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive()) {
 
-				g.drawImage(crabbyArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - CRABBY_DRAWOFFSET_X + c.flipX(),
-						(int) c.getHitbox().y - CRABBY_DRAWOFFSET_Y + (int) c.getPushDrawOffset(), CRABBY_WIDTH * c.flipW(), CRABBY_HEIGHT, null);
+				g.drawImage(crabbyArr[c.getState()][c.getAniIndex()], (int) c.getHitbox().x - xLvlOffset - PIG_DRAWOFFSET_X + c.flipX(),
+						(int) c.getHitbox().y - PIG_DRAWOFFSET_Y + (int) c.getPushDrawOffset(), PIG_WIDTH * c.flipW(), PIG_HEIGHT, null);
 
 //				c.drawHitbox(g, xLvlOffset);
 //				c.drawAttackBox(g, xLvlOffset);
@@ -87,7 +87,7 @@ public class EnemyManager {
 	}
 
 	public void checkEnemyHit(Rectangle2D.Float attackBox) {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			if (c.isActive())
 				if (c.getState() != DEAD && c.getState() != HIT)
 					if (attackBox.intersects(c.getHitbox())) {
@@ -95,7 +95,7 @@ public class EnemyManager {
 						return;
 					}
 
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (KingPig p : currentLevel.getPinkstars())
 			if (p.isActive()) {
 				if (p.getState() == ATTACK && p.getAniIndex() >= 3)
 					return;
@@ -119,8 +119,8 @@ public class EnemyManager {
 	}
 
 	private void loadEnemyImgs() {
-		crabbyArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.CRABBY_SPRITE), 9, 5, CRABBY_WIDTH_DEFAULT, CRABBY_HEIGHT_DEFAULT);
-		pinkstarArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.PINKSTAR_ATLAS), 8, 5, PINKSTAR_WIDTH_DEFAULT, PINKSTAR_HEIGHT_DEFAULT);
+		crabbyArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.PIG_SPRITE), 9, 5, PIG_WIDTH_DEFAULT, PIG_HEIGHT_DEFAULT);
+		pinkstarArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.KINGPIG_ATLAS), 8, 5, KINGPIG_WIDTH_DEFAULT, KINGPIG_HEIGHT_DEFAULT);
 		sharkArr = getImgArr(LoadSave.GetSpriteAtlas(LoadSave.SHARK_ATLAS), 8, 5, SHARK_WIDTH_DEFAULT, SHARK_HEIGHT_DEFAULT);
 	}
 
@@ -133,9 +133,9 @@ public class EnemyManager {
 	}
 
 	public void resetAllEnemies() {
-		for (Crabby c : currentLevel.getCrabs())
+		for (Pig c : currentLevel.getCrabs())
 			c.resetEnemy();
-		for (Pinkstar p : currentLevel.getPinkstars())
+		for (KingPig p : currentLevel.getPinkstars())
 			p.resetEnemy();
 		for (Shark s : currentLevel.getSharks())
 			s.resetEnemy();

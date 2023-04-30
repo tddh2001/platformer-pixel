@@ -8,15 +8,15 @@ import static utilz.Constants.Directions.*;
 
 import gamestates.Playing;
 
-public class Pinkstar extends Enemy {
+public class KingPig extends Enemy {
 
 	private boolean preRoll = true;
 	private int tickSinceLastDmgToPlayer;
 	private int tickAfterRollInIdle;
 	private int rollDurationTick, rollDuration = 300;
 
-	public Pinkstar(float x, float y) {
-		super(x, y, PINKSTAR_WIDTH, PINKSTAR_HEIGHT, PINKSTAR);
+	public KingPig(float x, float y) {
+		super(x, y, KINGPIG_WIDTH, KINGPIG_HEIGHT, KINGPIG);
 		initHitbox(17, 21);
 	}
 
