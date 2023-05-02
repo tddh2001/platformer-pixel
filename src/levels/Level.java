@@ -24,7 +24,7 @@ public class Level {
 	private BufferedImage img;
 	private int[][] lvlData;
 
-	private ArrayList<Pig> crabs = new ArrayList<>();
+	private ArrayList<Pig> pigs = new ArrayList<>();
 	private ArrayList<KingPig> kingPigs = new ArrayList<>();
 	private ArrayList<Shark> sharks = new ArrayList<>();
 	private ArrayList<Potion> potions = new ArrayList<>();
@@ -82,7 +82,7 @@ public class Level {
 
 	private void loadEntities(int greenValue, int x, int y) {
 		switch (greenValue) {
-		case PIG -> crabs.add(new Pig(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
+		case PIG -> pigs.add(new Pig(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
 		case KINGPIG -> kingPigs.add(new KingPig(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
 		case SHARK -> sharks.add(new Shark(x * Game.TILES_SIZE, y * Game.TILES_SIZE));
 		case 100 -> playerSpawn = new Point(x * Game.TILES_SIZE, y * Game.TILES_SIZE);
@@ -121,8 +121,8 @@ public class Level {
 		return playerSpawn;
 	}
 
-	public ArrayList<Pig> getCrabs() {
-		return crabs;
+	public ArrayList<Pig> getPigs() {
+		return pigs;
 	}
 
 	public ArrayList<Shark> getSharks() {
@@ -145,7 +145,7 @@ public class Level {
 		return cannons;
 	}
 
-	public ArrayList<KingPig> getPinkstars() {
+	public ArrayList<KingPig> getKingPigs() {
 		return kingPigs;
 	}
 
